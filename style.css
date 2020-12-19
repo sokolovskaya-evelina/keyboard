@@ -1,0 +1,143 @@
+.use-keyboard-input {
+    display: block;
+    background-image: radial-gradient(rgb(213, 255, 0), rgb(217, 241, 0), rgb(221, 227, 0), rgb(224, 213, 0), rgb(228, 199, 0), rgb(232, 185, 0), rgb(236, 172, 0), rgb(240, 158, 0), rgb(244, 144, 0), rgb(247, 130, 0), rgb(251, 116, 0), rgb(255, 102, 0));
+    color: white;
+    text-shadow: black 3px 3px 5px;
+    height: calc(100vh - 380px);
+    min-height: 300px;
+    width: 90%;
+    margin: 30px auto;
+    padding: 10px;
+    font-size: 20px;
+    cursor: text;
+  }
+
+  ::-webkit-input-placeholder {color: white;}
+::-moz-placeholder          {color: white;}/* Firefox 19+ */
+:-moz-placeholder           {color: white;}/* Firefox 18- */
+:-ms-input-placeholder      {color: white;}
+  
+  @media (max-width: 1000px) {
+    .use-keyboard-input {
+      min-height: 230px;
+      width: 96%;
+      margin: 10px auto;
+      padding: 5px;
+    }
+  }
+  
+  @media (max-width: 499px) {
+    .use-keyboard-input {
+      width: 96%;
+      margin: 10px auto;
+      padding: 5px;
+    }
+  }
+  
+  @media (max-height: 800px) and (max-width: 499px) {
+    .use-keyboard-input {
+      height: calc(100vh - 350px);
+      min-height: 150px;
+    }
+  }
+  
+  .keyboard {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            background-image: linear-gradient(to top right, rgb(213, 255, 0), rgb(217, 241, 0), rgb(221, 227, 0), rgb(224, 213, 0), rgb(228, 199, 0), rgb(232, 185, 0), rgb(236, 172, 0), rgb(240, 158, 0), rgb(244, 144, 0), rgb(247, 130, 0), rgb(251, 116, 0), rgb(255, 102, 0));
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-transition: bottom 0.4s;
+    transition: bottom 0.4s;
+  }
+  
+  .keyboard--hidden {
+    bottom: -100%;
+  }
+  
+  .keyboard__keys {
+    text-align: center;
+  }
+  
+  .keyboard__key {
+    position: relative;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 45px;
+    width: 6%;
+    max-width: 90px;
+    margin: 3px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    vertical-align: top;
+    color: white;
+    text-shadow: black 3px 3px 5px;
+    font-size: 1.05rem;
+    outline: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .keyboard__key:active {
+    background: rgba(255, 255, 255, 0.12);
+  }
+  
+  .keyboard__key--wide {
+    width: 12%;
+    /*max-width: 90px;*/
+  }
+  
+  @media (max-width: 499px) {
+    .keyboard__key--wide {
+      width: 8%;
+    }
+  }
+  
+  .keyboard__key--extra-wide {
+    width: 30%;
+    max-width: 500px;
+  }
+  
+  .keyboard__key--activatable::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 8px;
+    width: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+  }
+  
+  .keyboard__key--active::after {
+    background: #08ff00;
+  }
+  
+  .keyboard__key--dark {
+    background: rgba(0, 0, 0, 0.25);
+  }
+  
+  .active {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+  .unvisible {
+    display: none;
+  }
+  
